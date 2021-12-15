@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning Tool for Resolution</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Noto Sans Math' rel='stylesheet'>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+		<div id="div_title">
+			<h1>Learning Tool for Resolution</h1>
+		</div>
+		
+		<div class="div_steps" id="div_input">
+			<h3>Input Facts</h3>
+			
+			<p id="statement">a &rarr; b</p>
+		
+			<table id="table_input">
+				<col id="col_0">
+				<col id="col_1">
+				<col id="col_2">
+				<col id="col_3">
+				<tr>
+					<td><p contenteditable="false">a</p></td>
+					<td><p contenteditable="true" spellcheck="false">ex: Every dragon is green.</p></td>
+					<td><button onclick="swapIcon(this)"><i class="fa fa-caret-left"></i></button></td>
+					<td><button onclick="deleteTableRow('table_input')"><i class="fa fa-trash"></i></button></td>
+				</tr>
+				<tr>
+					<td><p contenteditable="false">b</p></td>
+					<td><p contenteditable="true" spellcheck="false">ex: There exists a happy dragon.</p></td>
+					<td><button onclick="swapIcon(this)"><i class="fa fa-caret-right"></i></button></td>
+					<td><button onclick="deleteTableRow('table_input')"><i class="fa fa-trash"></i></button></td>
+				</tr>
+				<tr class="tr_add">
+					<td colspan="4"><button onclick="addTableRow('table_input')"><i class="fa fa-plus-circle"></i></button></td>
+				</tr>
+				<tr class="tr_next">
+					<td colspan="4"><button onclick="submitInputs('div_input')">next &#8250;</button></td>
+				</tr>
+			</table>
+		</div>
+		
+		</br>
+		</br>
+		
+		<div class="div_steps" id="div_defs">
+			<h3>Define Predicates</h3>
+		
+			<table id="table_defs">
+				<col id="col_1">
+				<col id="col_2">
+				<tr>
+					<td><p contenteditable="false">Is the universe all ...?</p></td>
+					<td><button onclick="swapIcon(this)"><i class="fa fa-square-o"></i></button></td>
+				</tr>
+				<tr>
+					<td><p contenteditable="true" spellcheck="false">ex: G(x): x is green</p></td>
+					<td><button onclick="deleteTableRow('table_defs')"><i class="fa fa-trash"></i></button></td>
+				</tr>
+				<tr>
+					<td><p contenteditable="true" spellcheck="false">ex: H(x): x is happy</p></td>
+					<td><button onclick="deleteTableRow('table_defs')"><i class="fa fa-trash"></i></button></td>
+				</tr>
+				<tr class="tr_add">
+					<td colspan="2"><button onclick="addTableRow('table_defs')"><i class="fa fa-plus-circle"></i></button></td>
+				</tr>
+				<tr class="tr_next">
+					<td colspan="2"><button onclick="submitInputs('div_defs')">next &#8250;</button></td>
+				</tr>
+			</table>
+		</div>
+		
+		</br>
+		</br>
+		
+		<div class="div_steps" id="div_formulas">
+			<h3>Express Facts in Predicate Logic</h3>
+		
+			<table id="table_formulas">
+				<col id="col_0">
+				<col id="col_1">
+				<col id="col_2">
+				<tr>
+					<td><p contenteditable="false">a</p></td>
+					<td><p contenteditable="false" spellcheck="false">enter text here</p></td>
+					<td><button onclick="openCloseRowEditing(this, 'modal_formulas')"><i class="fa fa-pencil-square-o"></i></button></td>
+				</tr>
+				<tr>
+					<td><p contenteditable="false">b</p></td>
+					<td><p contenteditable="false" spellcheck="false">enter text here2</p></td>
+					<td><button onclick="openCloseRowEditing(this, 'modal_formulas')"><i class="fa fa-pencil-square-o"></i></button></td>
+				</tr>
+				<tr class="tr_next">
+					<td colspan="3"><button onclick="submitInputs('div_formulas')">next &#8250;</button></td>
+				</tr>
+			</table>
+		</div>
+		
+		</br>
+		</br>
+		
+		<div class="div_steps" id="div_skol">
+			<h3>Skolemize</h3>
+		
+			<table id="table_skol">
+				<col id="col_0">
+				<col id="col_1">
+				<col id="col_2">
+				<tr>
+					<td><p contenteditable="false">a</p></td>
+					<td><p contenteditable="false" spellcheck="false">enter text here</p></td>
+					<td><button onclick="openCloseRowEditing('modal_skol')"><i class="fa fa-pencil-square-o"></i></button></td>
+				</tr>
+				<tr>
+					<td><p contenteditable="false">b</p></td>
+					<td><p contenteditable="false" spellcheck="false">enter text here2</p></td>
+					<td><button onclick="openCloseRowEditing('modal_skol')"><i class="fa fa-pencil-square-o"></i></button></td>
+				</tr>
+				<tr class="tr_next">
+					<td colspan="3"><button onclick="submitInputs('div_skol')">next &#8250;</button></td>
+				</tr>
+			</table>
+		</div>
+		
+		</br>
+		</br>
+		
+		<div class="div_steps" id="div_clauses">
+			<h3>Identify Clauses</h3>
+		
+			<table id="table_clauses">
+				<col id="col_0">
+				<col id="col_1">
+				<col id="col_2">
+				<tr>
+					<td><p contenteditable="false">a</p></td>
+					<td><p contenteditable="false" spellcheck="false">enter text here</p></td>
+					<td><button onclick="openCloseRowEditing('modal_clauses')"><i class="fa fa-pencil-square-o"></i></button></td>
+				</tr>
+				<tr>
+					<td><p contenteditable="false">b</p></td>
+					<td><p contenteditable="false" spellcheck="false">enter text here2</p></td>
+					<td><button onclick="openCloseRowEditing('modal_clauses')"><i class="fa fa-pencil-square-o"></i></button></td>
+				</tr>
+				<tr class="tr_next">
+					<td colspan="3"><button onclick="submitInputs('div_clauses')">next &#8250;</button></td>
+				</tr>
+			</table>
+		</div>
+		
+		</br>
+		</br>
+		
+		<div class="div_steps" id="div_res">
+			<h3>Resolution Graph</h3>
+		
+			<div id="div_res_playgrd">
+				<div id="toolbox">
+					<button id="btn_not" onclick="addNotSymbolToEl('div_res_playgrd')">&not;</button>
+					<button id="btn_box" onclick="addBoxSymbolToEl('div_res_playgrd')">&#9633;</button>
+					<button id="btn_clear" onclick="clearResPlaygrd('div_res_playgrd')">&#10227;</button>
+				</div>
+				<div id="res_clause_0" class="res_clause"><span>A, B, &not;C</span>
+					<div class="res_clause_connect"><i class="fa fa-plus-circle icon-clause-connect" aria-hidden="true"></i></div>
+				</div>
+				<div id="res_clause_1" class="res_clause"><span>&not;A</span>
+					<div class="res_clause_connect"><i class="fa fa-plus-circle icon-clause-connect" aria-hidden="true"></i></div>
+				</div>
+				<div id="res_clause_2" class="res_clause"><span>A, B, C</span>
+					<div class="res_clause_connect"><i class="fa fa-plus-circle icon-clause-connect" aria-hidden="true"></i></div>
+				</div>
+				<div id="res_clause_3" class="res_clause"><span>A, &not;B</span>
+					<div class="res_clause_connect"><i class="fa fa-plus-circle icon-clause-connect" aria-hidden="true"></i></div>
+				</div>
+				<div id="footer">
+					<button id="btn_next" onclick="">next &#8250;</button></td>
+				</div>
+			</div>
+			
+		</div>	
+
+		</br>
+		</br>
+		
+		<div class="div_steps" id="div_end">
+			<h3>Interpretation of Results</h3>
+		</div>		
+		
+		</br>
+		</br>
+		
+		<!-- Scroll to top button -->
+		<button id="btn_top" onclick="scrollUp()"><i class="fa fa-chevron-up"></i></button>
+		
+		<!-- Modals -->
+		<div id="modal_formulas" class="modal">
+			<div class="modal-content">
+				<span id="modal_formulas_close" class="close">&times;</span>
+				<p id="modal_formulas_p">Some text in modal 1.</p>
+			</div>
+		</div>
+		
+		<div id="modal_skol" class="modal">
+			<div class="modal-content">
+				<span id="modal_skol_close" class="close">&times;</span>
+				<p>Some text in modal 2.</p>
+			</div>
+		</div>
+		
+		<div id="modal_clauses" class="modal">
+			<div class="modal-content">
+				<span id="modal_clauses_close" class="close">&times;</span>
+				<p>Some text in modal 3.</p>
+			</div>
+		</div>
+		
+	</body>
+	
+	<script src="script.js"></script>
+</html>

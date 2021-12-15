@@ -1,0 +1,312 @@
+/* https://fontawesome.com/v4.7/icons/ */
+
+body {
+	width: 70%;
+	margin-left: auto; 
+    margin-right: auto;
+	font-family: 'Noto Sans Math', Arial, Helvetica, sans-serif;
+}
+
+
+/* All step divs */
+.div_steps {
+	margin-left: auto; 
+    margin-right: auto;
+	border: 1px solid #262927;
+	border-radius: 10px;
+	padding: 0px 12px;
+	background-color: #e1ebe5;
+}
+
+.div_steps h3 {
+	font-weight: bold;
+}
+
+.div_steps table, #div_res_playgrd {
+	width: 96%;
+	margin: 12px auto;
+}
+
+.div_steps table {
+	border-collapse: collapse;
+	background-color: #e1ebe5;
+}
+
+#div_res_playgrd {
+	background-color: white;
+}
+
+.div_steps tr {
+	border-bottom: 1px solid #e1ebe5;
+	background-color: white;
+}
+
+.div_steps tr:hover {
+	background-color: #f2f2f2;
+}
+
+.div_steps p {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.tr_add, .tr_add td, .tr_curr, .tr_curr td {
+	text-align: center;
+	border: none;
+	background-color: #e1ebe5;
+}
+
+.tr_next, .tr_next td {
+	text-align: right;
+	border: none;
+	background-color: #e1ebe5;
+}
+
+.div_steps td:nth-child(1), .div_steps td:nth-child(3), .div_steps td:nth-child(4) {
+	padding: 0px 8px;
+	user-select: none;
+	font-weight: bold;
+}
+
+.div_steps td:nth-child(2), #div_defs td:nth-child(1) {
+	width: 100%;
+}
+
+#div_defs td:nth-child(2) {
+	padding: 0px 8px;
+	user-select: none;
+}
+
+#div_defs td:nth-child(1) {
+	font-weight: normal;
+}
+
+i {
+	color: grey;
+}
+
+i:hover {
+	color: #3b3b3b;
+}
+
+#statement {
+	text-align: center;
+}
+
+#div_input {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* Buttons */
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.tr_next button, #btn_next {
+	background-color: grey;
+	font-size: 14px;
+	padding: 2px 8px;
+	border-radius: 30px;
+	font-weight: bold;
+	color: #e1ebe5;
+}
+
+.div_steps .tr_next button {
+	margin-top: 25px;
+}
+
+#div_input .tr_next button, #div_defs .tr_next button {
+	margin-top: 0px;
+}
+
+.tr_next button:hover, #btn_next:hover {
+	background-color: #3b3b3b;
+}
+
+#btn_next {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+
+/* Modal */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+/* Scroll to top button */
+#btn_top {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 99;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	color: rgba(33,33,33,1);
+	background-color: rgba(33,33,33,0.1);
+	font-size: 16px;
+}
+
+#btn_top:hover {
+	background-color: rgba(33,33,33,0.1);
+}
+
+
+/* Resolution diagram div */
+#div_res_playgrd, #div_res_playgrd_clauses, #div_res_playgrd_dia {
+	border: 1px solid black;
+}
+
+#div_res_playgrd {
+	min-height: 400px;
+	position: relative;
+	
+}
+
+#div_res_playgrd #toolbox {
+	float: right;
+}
+
+#div_res #footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.res_clause {
+	position: absolute;
+	border: 1px solid black;
+	border-radius: 4px;
+	background-color: white;
+	user-select: none;
+	cursor: move;
+	white-space: nowrap;
+	padding: 2px 4px;
+	text-align: center;
+	z-index: 10;
+	min-width: 80px;
+}
+
+.res_clause p {
+	line-height: 0px;
+}
+
+.res_clause_editable {
+	z-index: 10;
+	border: 1px solid cadetblue;
+	color: cadetblue;
+}
+
+.res_clause_editable span {
+	cursor: text;
+}
+
+.res_clause_editable p {
+	line-height: normal;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.res_clause_connect {
+	text-align: center;
+}
+
+.res_line {
+	position: absolute;
+	width: 2px;
+	background-color: cadetblue;
+	z-index: 9;
+}
+
+.icon-clause-connect {
+	cursor: pointer;
+	color: black;
+}
+
+.icon-clause-connect:hover {
+	color: cadetblue;
+}
+
+#toolbox {
+	margin: 4px;
+}
+
+#toolbox button {
+	font-size: 20px;
+	width: 30px;
+	height: 30px;
+	border: 1px solid grey;
+	border-radius: 32px;
+}
+
+#toolbox button:hover {
+	background-color: grey;
+	color: white;
+}
+
+.btn_logic_sym {
+	margin-right: 6px;
+}
+
+.btn_logic_sym_pred {
+	margin-right: 6px;
+}
+
+.div_steps {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.div_steps table, #div_res_playgrd {
+	display: none;
+}
+
+#div_input table {
+	display: block;
+}
+
+#modal_formulas_p_input {
+	border: 1px solid black;
+}
